@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>运营台账面板</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+<link rel="stylesheet" href="../../css/font-awesome.min.css">  
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../css/adminlte.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../../css/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="../../css/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="../../css/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+      
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="../../css/bootstrap3-wysihtml5.min.css">
+  
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="" class="nav-link">首页</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">其他</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Right navbar links -->
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="" class="brand-link">
+      <img src="../../img/AdminLTELogo.png" alt="Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">运营台账系统</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar左侧用户面板 -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{$username}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-pie-chart"></i>
+              <p>
+                基本情况查看
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>每日运营情况变动</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>最近一周新增开业</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>最近一周新增装修</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-tree"></i>
+              <p>
+                运营分区
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>水暖区4-14</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>石材区15-24</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/buttons.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>辅助区25-27</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/sliders.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>加工厂区</p>
+                </a>
+              </li> 
+			  <li class="nav-item">
+                <a href="pages/UI/sliders.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>堆场区</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-edit"></i>
+              <p>
+                异动操作
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/forms/general.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>总表查看编辑</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/advanced.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Advanced Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/editors.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Editors</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-table"></i>
+              <p>
+                系统
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/tables/simple.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Simple Tables</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/data.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Data Tables</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+        
+       
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">数据更新</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">数据更新</a></li>
+              <li class="breadcrumb-item active">运营网页台账</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+     <div class="row">
+          <div class="col-12">
+            <!-- Main content -->
+            <div class="invoice p-3 mb-3">
+              <!-- title row -->
+              <div class="row">
+                <div class="col-12">
+                  <h4>
+                    <i class="fa fa-globe"></i> 9栋114#安沙国际建材城售楼部
+                    <small class="float-right">最近更新时间: 2018/9/12</small>
+                  </h4>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- info row -->
+              <div class="row invoice-info">
+                <div class="col-sm-4 invoice-col">
+				<div class="form-group">
+					  <label>状态：</label><br>
+                      <label class="checkbox-inline"><input type="radio" name="state" id="optionsRadios3" value="option1" checked> 正常经营中</label>
+                      <label class="checkbox-inline"><input type="radio" name="state" id="optionsRadios4"  value="option2">未售</label>
+                      <label class="checkbox-inline"><input type="radio" name="state" id="optionsRadios4"  value="option2">未租</label>
+                      <label class="checkbox-inline"><input type="radio" name="state" id="optionsRadios4"  value="option2">未装修</label>
+                      <label class="checkbox-inline"><input type="radio" name="state" id="optionsRadios4"  value="option2">未开业</label>
+                      <label class="checkbox-inline"><input type="radio" name="state" id="optionsRadios4"  value="option2">停业中</label>
+                    </div>
+                  <div class="form-group">
+                    <label>业态：</label>
+                    <input type="" class="form-control" id="yt" placeholder="业态">
+                  </div>
+				  <div class="form-group">
+                    <label>品牌名称：</label>
+                    <input type="email" class="form-control" id="" placeholder="品牌名称">
+                  </div>
+				  	<div class="form-group">
+					  <label>是否分租：</label><br>
+                      <label class="checkbox-inline"><input type="radio" name="lease" id="optionsRadios3" value="option1" checked> 无</label>
+                      <label class="checkbox-inline"><input type="radio" name="lease" id="optionsRadios4"  value="option2">是</label>
+                      <label class="checkbox-inline"><input type="radio" name="lease" id="optionsRadios4"  value="option2">否</label>
+                    </div>
+					<div class="form-group">
+					  <label>经营补贴</label><br>
+                      <label class="checkbox-inline"><input type="radio" name="reward " id="optionsRadios4"  value="option2">是</label>
+                      <label class="checkbox-inline"><input type="radio" name="reward " id="optionsRadios4"  value="option2" checked>否</label>
+                    </div>
+					<div class="form-group">
+					  <label>有无装修奖励</label><br>
+                      <label class="checkbox-inline"><input type="radio" name="zxreward " id="optionsRadios4"  value="option2">是</label>
+                      <label class="checkbox-inline"><input type="radio" name="zxreward " id="optionsRadios4"  value="option2" checked>否</label>
+                    </div>
+					<div class="form-group">
+					  <label>装修等级</label><br>
+                      <label class="checkbox-inline"><input type="radio" name="grade " id="optionsRadios4"  value="option2">低</label>
+                      <label class="checkbox-inline"><input type="radio" name="grade " id="optionsRadios4"  value="option2" checked>中</label>					  
+                      <label class="checkbox-inline"><input type="radio" name="grade " id="optionsRadios4"  value="option2" checked>高</label>
+                    </div>
+					<div class="form-group">
+                    <label>备注：</label>
+                    <input type="email" class="form-control" id="" placeholder="备注">
+                  </div>
+					<!--<div class="form-group">
+					  <label>运营员</label><br>
+                      <label class="checkbox-inline"><input type="radio" name="yyy " id="optionsRadios4"  value="option2">周利娟</label>
+                      <label class="checkbox-inline"><input type="radio" name="yyy " id="optionsRadios4"  value="option2" checked>丁杰</label>					  
+                      <label class="checkbox-inline"><input type="radio" name="yyy " id="optionsRadios4"  value="option2" checked>曹利元</label>					  
+                      <label class="checkbox-inline"><input type="radio" name="yyy " id="optionsRadios4"  value="option2" checked>付水情</label>					  
+                      <label class="checkbox-inline"><input type="radio" name="yyy " id="optionsRadios4"  value="option2" checked>朱碧莹</label>
+                    </div>-->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 invoice-col">
+                  <div class="form-group">
+				  <label>签约时间：</label>
+                    <input type="" class="form-control" id="sign" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="业态"></div>
+				  <div class="form-group">
+                    <label>购买者姓名:</label>
+                    <input type="" class="form-control" id="yt" placeholder="购买者姓名">
+                  </div>
+				  <div class="form-group">
+                    <label>租赁者名称:</label>
+                    <input type="" class="form-control" id="yt" placeholder="租赁者名称">
+                  </div>
+				  <div class="form-group">
+                    <label>购买者电话:</label>
+                    <input type="" class="form-control" id="yt" placeholder="购买者电话">
+                  </div>
+				  <div class="form-group">
+                    <label>租赁者电话:</label>
+                    <input type="" class="form-control" id="yt" placeholder="租赁者电话">
+                  </div>
+				  <div class="form-group">
+                    <label>门面总面积:</label>
+                    <input type="" class="form-control" id="yt" placeholder="门面总面积">
+                  </div>
+				  <div class="form-group">
+                    <label>租赁单价1楼:</label>
+                    <input type="" class="form-control" id="yt" placeholder="租赁单价1楼">
+                  </div>
+				  <div class="form-group">
+                    <label>租赁单价2楼及以上楼:</label>
+                    <input type="" class="form-control" id="yt" placeholder="租赁单价2楼及以上楼">
+                  </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 invoice-col">
+				 <div class="form-group">
+				  <label>交房时间：</label>
+                    <input type="" class="form-control" id="jf" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="交房时间"></div>
+					<div class="form-group">
+				  <label>申请装修时间:</label>
+                    <input type="" class="form-control" id="sqzx" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="申请装修时间"></div>
+					<div class="form-group">
+				  <label>启动装修时间：</label>
+                    <input type="" class="form-control" id="qd" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="启动装修时间"></div>
+					<div class="form-group">
+				  <label>开业时间：</label>
+                    <input type="" class="form-control" id="ky" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="开业时间"></div>
+					<div class="form-group">
+				  <label>租金计算时间：</label>
+                    <input type="" class="form-control" id="zj" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="租金计算时间"></div>
+					<div class="form-group">
+				  <label>物业费计算时间：</label>
+                    <input type="" class="form-control" id="wyf" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" placeholder="物业费计算时间"></div>
+					<div class="form-group">
+                    <label>是否有仓库或门面:</label>
+                    <input type="" class="form-control" id="sfck" placeholder="是否有仓库或门面">
+                  </div>
+				  <div class="form-group">
+                    <label>是否有堆场:</label>
+                    <input type="" class="form-control" id="sfdc" placeholder="是否有堆场">
+                  </div>
+                </div>
+                <!-- /.col -->
+				
+              </div>
+              <!-- /.row -->
+
+
+              <!-- this row will not appear when printing -->
+              <div class="row no-print">
+                <div class="col-12">
+                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                    <i class="fa fa-download"></i>状态更新
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- /.invoice -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+	  
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2018 <a href="">At-Shine</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Power By</b> Scents
+    </div>
+  </footer>
+
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../js/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script type="text/javascript" src="../../js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- AdminLTE App -->
+
+<script type="text/javascript">
+	$('#sign,#ky,#jf,#sqzx,#qd,#zj,#wyf').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+</script>
+<script src="../../js/adminlte.js"></script><!-左侧栏->
+</body>
+</html>
